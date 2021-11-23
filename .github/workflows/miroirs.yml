@@ -1,0 +1,27 @@
+name: mirroring
+
+on:
+  schedule:
+    - cron:  "0 20 * * *"
+  workflow_dispatch:
+
+jobs:
+  sync_decklink:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Sync decklink
+        uses: nanake/nigemizu@main
+        with:
+          source: https://notabug.org/RiCON/decklink-headers.git
+          target: decklink-headers
+          token: ${{ secrets.miraringu }}
+
+  sync_soxr:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Sync soxr
+        uses: nanake/nigemizu@main
+        with:
+          source: https://gitlab.com/m-ab-s/libsoxr.git
+          target: libsoxr
+          token: ${{ secrets.miraringu }}
