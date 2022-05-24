@@ -7,7 +7,7 @@ on:
 
 jobs:
   sync_decklink:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Sync decklink
         uses: nanake/nigemizu@main
@@ -17,7 +17,7 @@ jobs:
           token: ${{ secrets.miraringu }}
 
   sync_soxr:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Sync soxr
         uses: nanake/nigemizu@main
